@@ -1,0 +1,21 @@
+services:
+  hadoop-master:
+    image: hadoop-master-python
+    container_name: hadoop-master
+    hostname: hadoop-master
+    environment:
+      - CLUSTER_NAME=aula-big-data
+      - CORE_CONF_fs_defaultFS=hdfs://hadoop-master:8020
+    ports:
+      - "9870:9870"
+      - "8020:8020"
+
+  hadoop-slave:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: hadoop-slave
+    hostname: hadoop-slave
+    environment:
+      - SERVICE_PRECONDITION=hadoop-master:9870
+      - CORE_CONF_fs_defaultFS=hdfs://hadoop-master:8020
+    depends_on:
+      - hadoop-master
