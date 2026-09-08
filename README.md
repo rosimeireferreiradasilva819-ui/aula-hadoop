@@ -141,6 +141,7 @@ docker exec -it hadoop-master hdfs dfs -cat /data/output_final/part-00000 | more
 ---
 
 ## 🏁 Conclusão
+A atividade permitiu aplicar na prática o Hadoop Streaming com Python, utilizando Mapper e Reducer para processar os dados do MovieLens. Foram calculadas a média, nota máxima e quantidade de votos de cada filme, mostrando também que uma média alta com poucos votos possui menor relevância estatística.
 
 O uso do Hadoop permitiu o processamento eficiente de dados em larga escala. A abordagem com MapReduce possibilitou a extração de métricas importantes e o enriquecimento dos dados, tornando a análise mais completa e significativa.
 
